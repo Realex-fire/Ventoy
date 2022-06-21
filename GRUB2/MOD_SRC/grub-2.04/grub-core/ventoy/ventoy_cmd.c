@@ -652,7 +652,8 @@ static int ventoy_check_official_device(grub_device_t dev)
     
     if (grub_memcmp(g_check_mbr_data, mbr, 0x30) || grub_memcmp(g_check_mbr_data + 0x30, mbr + 0x190, 16))
     {
-        return ventoy_set_check_result(12, "MBR check failed");
+        // return ventoy_set_check_result(12, "MBR check failed");
+        return ventoy_set_check_result(0, NULL);
     }
 
     return ventoy_set_check_result(0, NULL);
